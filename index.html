@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Estancia — Cocina de campo & casino | Buenos Aires</title>
+<meta name="description" content="Cocina de campo argentina en un salón verde y latón: fuego de leña, huerta propia y un salón de juegos privado.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#0c1f15;--pine:#12291b;--moss:#183423;--gold:#cfa64e;--gold2:#e5c983;--cream:#f2ecdc;--mut:#9fb6a4;--line:rgba(207,166,78,.28)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--cream);line-height:1.65}
+h1,h2,h3,.serif{font-family:'EB Garamond',Georgia,serif;font-weight:500}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+.overline{letter-spacing:.32em;text-transform:uppercase;font-size:.68rem;color:var(--gold);margin-bottom:14px}
+h2{font-size:clamp(1.9rem,3.6vw,2.8rem)}
+h2 i{color:var(--gold)}
+.lead{color:var(--mut);max-width:620px;margin-top:14px}
+.btn{display:inline-block;background:var(--gold);color:#132015;padding:14px 30px;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+.btn.ghost:hover{background:rgba(207,166,78,.12)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,31,21,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 26px;max-width:1250px;margin:auto}
+.logo{display:flex;align-items:center;gap:11px;color:var(--cream);text-decoration:none;font-family:'EB Garamond',serif;font-size:1.2rem;letter-spacing:.16em}
+.logo svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.menu{display:flex;gap:24px}
+.menu a{color:var(--cream);text-decoration:none;font-size:.73rem;letter-spacing:.16em;text-transform:uppercase}
+.menu a:hover{color:var(--gold2)}
+.burger{display:none;background:none;border:none;color:var(--gold2);font-size:1.6rem;cursor:pointer}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:150px 0 80px}
+.hero h1{font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.1}
+.hero h1 i{color:var(--gold)}
+.hero .cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
+.hero .ph{height:560px;border:1px solid var(--gold);outline:1px solid rgba(207,166,78,.3);outline-offset:8px}
+/* guia cards */
+.guia{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:20px 0 90px}
+.gcard{background:var(--moss);border:1px solid var(--line);padding:40px}
+.gcard.out{background:transparent}
+.gcard h3{font-size:1.5rem;color:var(--gold2);margin-bottom:12px}
+.gcard p{color:var(--mut);font-size:.92rem}
+.gcard .inner{border:1px solid var(--line);padding:18px;margin-top:20px;font-size:.85rem;color:var(--mut)}
+/* features */
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:0 0 100px}
+.feat{border:1px solid var(--line);padding:36px 28px;text-align:center;background:var(--pine)}
+.feat .ic{font-size:1.5rem;color:var(--gold)}
+.feat h4{font-family:'EB Garamond',serif;font-size:1.25rem;margin:14px 0 8px;color:var(--cream)}
+.feat p{color:var(--mut);font-size:.86rem}
+/* plato estacion */
+.plato{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;padding:0 0 100px}
+.plato .ph{height:460px;border:1px solid var(--gold);outline:1px solid rgba(207,166,78,.3);outline-offset:8px}
+/* cards platos */
+.autor{padding:0 0 100px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.dish{background:var(--pine);border:1px solid var(--line)}
+.dish .ph{height:230px}
+.dish .tx{padding:24px}
+.dish .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.dish h3{font-size:1.2rem}
+.dish .price{color:var(--gold);font-family:'EB Garamond',serif;white-space:nowrap}
+.dish p{color:var(--mut);font-size:.86rem;margin-top:8px}
+/* casino */
+.casinoS{padding:0 0 100px}
+.cbox{border:1px solid var(--gold);outline:1px solid rgba(207,166,78,.3);outline-offset:8px;background:var(--pine);display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding:60px}
+.cbox .ph{height:400px}
+.badge18{display:inline-flex;width:52px;height:52px;border:1px solid var(--gold);border-radius:50%;align-items:center;justify-content:center;font-weight:700;color:var(--gold2);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.chips span{border:1px solid var(--gold);padding:9px 18px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2)}
+.note{font-size:.8rem;color:var(--mut);margin-top:16px}
+/* banda interior */
+.band{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.band .bg{position:absolute;inset:0}
+.band .bg::after{content:"";position:absolute;inset:0;background:rgba(10,24,16,.66)}
+.band .wrap{position:relative;z-index:2}
+.band blockquote{font-family:'EB Garamond',serif;font-size:clamp(1.4rem,3vw,2.2rem);max-width:800px;margin:0 auto 18px;font-style:italic}
+.band cite{font-style:normal;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2)}
+/* reserva */
+.reserva{padding:100px 0}
+.reserva .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form input,.form select{background:var(--pine);border:1px solid var(--line);color:var(--cream);padding:14px 16px;font-family:'Lato',sans-serif;font-size:.92rem;width:100%}
+.form select option{background:var(--pine)}
+.form .full{grid-column:1/-1}
+.form input:focus,.form select:focus{outline:none;border-color:var(--gold)}
+.form .btn{grid-column:1/-1;justify-self:start}
+.ok{display:none;grid-column:1/-1;border:1px solid var(--gold);padding:18px 24px;color:var(--gold2)}
+/* legales tabs */
+.legales{padding:0 0 100px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:36px 0 26px}
+.tab{background:transparent;border:1px solid var(--line);color:var(--mut);padding:11px 20px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif}
+.tab.on{border-color:var(--gold);color:var(--gold2);background:rgba(207,166,78,.08)}
+.panel{display:none;border:1px solid var(--line);background:var(--pine);padding:36px;color:var(--mut);font-size:.9rem}
+.panel.on{display:block}
+.panel h4{color:var(--gold2);font-family:'EB Garamond',serif;font-size:1.2rem;margin-bottom:10px}
+/* footer */
+footer{background:#08150e;padding:60px 0 30px;border-top:1px solid var(--line)}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:50px}
+.fgrid h4{color:var(--gold);letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;margin-bottom:16px}
+.fgrid p,.fgrid a{color:var(--mut);font-size:.9rem;text-decoration:none;display:block;margin-bottom:8px}
+.fgrid a:hover{color:var(--gold2)}
+.copy{margin-top:44px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;color:#5f7a68;font-size:.78rem}
+@media(max-width:960px){.hero,.guia,.plato,.cbox,.reserva .grid{grid-template-columns:1fr}.hero .ph{height:380px}.feats,.cards{grid-template-columns:1fr}.cbox{padding:40px 26px}.cbox .ph{height:300px}.fgrid{grid-template-columns:1fr 1fr}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--deep);flex-direction:column;padding:26px;gap:18px;border-bottom:1px solid var(--line)}.menu.open{display:flex}.burger{display:block}}
+@media(max-width:600px){.form,.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#inicio">
+      <svg viewBox="0 0 26 26"><path d="M13 24V8M13 8c0-3 2-5 5-5 0 3-2 5-5 5zm0 0c0-3-2-5-5-5 0 3 2 5 5 5zm0 6c0-3 2-5 5-5 0 3-2 5-5 5zm0 0c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg>
+      LA ESTANCIA
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#plato">La estación</a><a href="#autor">Platos</a><a href="#casino">Casino</a>
+      <a href="#legales">Transparencia</a><a href="#reserva">Reservas</a>
+    </nav>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="wrap hero" id="inicio">
+  <div>
+    <div class="overline">Bienvenidos a La Estancia · Cañuelas</div>
+    <h1>El campo, servido <i>a la mesa</i></h1>
+    <p class="lead">Cocina de fuego de leña con lo que da la huerta en la semana: sin apuro, sin congelados y sin letra chica. A cuarenta minutos de Buenos Aires.</p>
+    <div class="cta">
+      <a class="btn" href="#autor">Ver los platos</a>
+      <a class="btn ghost" href="#reserva">Reservar mesa</a>
+    </div>
+  </div>
+  <div class="ph"><img src="1.jpg" alt="Salmón a la brasa de La Estancia"></div>
+</section>
+
+<section class="wrap guia">
+  <div class="gcard">
+    <h3>La guía de la casa</h3>
+    <p>El menú se escribe cada lunes según la feria: lo que no está en temporada, no está en la carta. Por eso cada visita es distinta a la anterior — y eso, para nosotros, es un lujo.</p>
+    <p style="margin-top:14px"><a class="btn ghost" href="#autor" style="padding:11px 22px">Menú de esta semana →</a></p>
+  </div>
+  <div class="gcard out">
+    <h3>Temporada 2026</h3>
+    <p>Casa abierta de martes a domingo. Los fuegos se encienden a las 19:00 y la última mesa se sienta a las 23:00.</p>
+    <div class="inner">✦ &nbsp;Dato de la casa: el pan se amasa a las 6 de la mañana y la manteca se bate aquí mismo.</div>
+  </div>
+</section>
+
+<section class="wrap feats">
+  <div class="feat"><div class="ic">❋</div><h4>Fuego de leña</h4><p>Quebracho y caldén, nunca gas. El sabor empieza en el bosque.</p></div>
+  <div class="feat"><div class="ic">✦</div><h4>Huerta propia</h4><p>Tres hectáreas de estación: lo que se cosecha de mañana, se sirve de noche.</p></div>
+  <div class="feat"><div class="ic">❖</div><h4>Ganado del pago</h4><p>Criadores vecinos, trazabilidad completa y cortes que no viajan en cámara más de un día.</p></div>
+</section>
+
+<section class="wrap plato" id="plato">
+  <div class="ph"><img src="2.jpg" alt="Provoleta con miel y tomillo"></div>
+  <div>
+    <div class="overline">El plato de la estación</div>
+    <h2>Provoleta al caldén, <i>miel y tomillo</i></h2>
+    <p class="lead">La provoleta de la casa: queso de tambo propio dorado a la llama, miel de caña del norte y tomillo de la huerta. Se comparte, como todo lo bueno.</p>
+    <p style="margin-top:26px"><a class="btn" href="#reserva">Probarlo esta semana</a> <a class="btn ghost" href="#autor" style="margin-left:12px">Carta completa</a></p>
+  </div>
+</section>
+
+<section class="wrap autor" id="autor">
+  <div class="overline">Esta semana en la brasa</div>
+  <h2>Tres platos que <i>no fallan</i></h2>
+  <div class="cards">
+    <div class="dish"><div class="ph"><img src="3.jpg" alt="Bife de chorizo"></div><div class="tx"><div class="row"><h3>Bife de chorizo</h3><span class="price">$24.000</span></div><p>400 g a la leña, papas al plomo y rúcula de la huerta.</p></div></div>
+    <div class="dish"><div class="ph"><img src="4.jpg" alt="Humita de olla"></div><div class="tx"><div class="row"><h3>Humita de olla</h3><span class="price">$12.500</span></div><p>Maíz de estación, albahaca y aceite de verdeo.</p></div></div>
+    <div class="dish"><div class="ph"><img src="5.jpg" alt="Tarta de dulce de leche"></div><div class="tx"><div class="row"><h3>Tarta de la abuela</h3><span class="price">$8.500</span></div><p>Dulce de leche de la casa, merengue y limón sutil.</p></div></div>
+  </div>
+</section>
+
+<section class="wrap casinoS" id="casino">
+  <div class="cbox">
+    <div>
+      <div class="badge18">+18</div>
+      <div class="overline">Salón de juegos</div>
+      <h2>Sukno verde, <i>noche larga</i></h2>
+      <p class="lead">Al fondo del galerón, un salón de estilo inglés: paño verde, latón y nogal. Mesas en vivo y slots premium para alargar la sobremesa.</p>
+      <div class="chips"><span>Ruleta en vivo</span><span>Blackjack</span><span>Póker caribeño</span><span>Slots premium</span></div>
+      <p class="note">Acceso exclusivo para mayores de 18 años. Jugá con moderación. Ver <a href="#legales" style="color:var(--gold2)">Juego Responsable</a>.</p>
+    </div>
+    <div class="ph"><img src="6.jpg" alt="Salón de juegos de La Estancia"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="bg"><img src="7.jpg" alt="Salón verde de La Estancia"></div>
+  <div class="wrap">
+    <blockquote>“Acá el tiempo se mide en brasas, no en relojes.”</blockquote>
+    <cite>El patrón de La Estancia</cite>
+  </div>
+</section>
+
+<section class="wrap reserva" id="reserva">
+  <div class="grid">
+    <div>
+      <div class="overline">Reservas</div>
+      <h2>Guardate <i>un lugar</i></h2>
+      <p class="lead">Confirmamos por email dentro de las 2 horas. Los sábados, con una semana de anticipación: el galerón se llena solo.</p>
+    </div>
+    <form class="form" id="form">
+      <input type="text" placeholder="Nombre y apellido" required>
+      <input type="email" placeholder="Email" required>
+      <input type="date" required aria-label="Fecha">
+      <select required><option value="">Hora…</option><option>19:00</option><option>20:00</option><option>21:00</option><option>22:00</option><option>23:00</option></select>
+      <select required class="full"><option value="">Personas…</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+      <button class="btn" type="submit">Enviar reserva</button>
+      <div class="ok" id="ok">¡Gracias! Tu pedido de reserva fue enviado. Te confirmamos por email dentro de las 2 horas.</div>
+    </form>
+  </div>
+</section>
+
+<section class="wrap legales" id="legales">
+  <div class="overline">Transparencia</div>
+  <h2>Las reglas, <i>claras</i></h2>
+  <div class="tabs">
+    <button class="tab on" data-p="p1">Privacidad</button>
+    <button class="tab" data-p="p2">Términos</button>
+    <button class="tab" data-p="p3">Cookies</button>
+    <button class="tab" data-p="p4">Juego +18</button>
+    <button class="tab" data-p="p5">Reservas</button>
+  </div>
+  <div class="panel on" id="p1"><h4>Tus datos, cuidados</h4><p>La Estancia S.R.L. trata tus datos según la Ley 25.326 de Protección de Datos Personales de la República Argentina: se usan solo para gestionar reservas y consultas. Podés pedir acceso, rectificación o supresión escribiendo a datos@laestancia.com.ar. Nunca los vendemos ni cedemos.</p></div>
+  <div class="panel" id="p2"><h4>Cómo funciona la casa</h4><p>La carta cambia con la temporada y los precios pueden actualizarse sin aviso previo. La mesa se sostiene 15 minutos pasado el horario de reserva. Todo el contenido del sitio es informativo y las fotos muestran platos de referencia.</p></div>
+  <div class="panel" id="p3"><h4>Cookies, pocas y necesarias</h4><p>Usamos cookies técnicas para que el sitio funcione y mediciones anónimas para mejorarlo. Podés bloquearlas o borrarlas desde tu navegador en cualquier momento; algunas funciones podrían dejar de estar disponibles.</p></div>
+  <div class="panel" id="p4"><h4>Juego responsable</h4><p>El salón de juegos es exclusivo para mayores de 18 años. Jugá con moderación y nunca por encima de tus posibilidades; nuestro personal puede asistirte o limitar el acceso si lo necesitás. Prohibida la participación de menores. Contacto: juego@laestancia.com.ar.</p></div>
+  <div class="panel" id="p5"><h4>Reservas y cancelaciones</h4><p>Cancelar sin cargo hasta 4 horas antes. Para eventos en el galerón, la seña se reintegra con 48 horas de anticipación; con menos margen, queda como crédito por 30 días.</p></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#inicio" style="margin-bottom:14px">
+          <svg viewBox="0 0 26 26"><path d="M13 24V8M13 8c0-3 2-5 5-5 0 3-2 5-5 5zm0 0c0-3-2-5-5-5 0 3 2 5 5 5zm0 6c0-3 2-5 5-5 0 3-2 5-5 5zm0 0c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg>
+          LA ESTANCIA
+        </a>
+        <p>Cocina de campo & salón de juegos. Ruta 205 km 54, Cañuelas, Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Horarios</h4>
+        <p>Martes a jueves · 19:00–24:00</p>
+        <p>Vie y sáb · 19:00–01:00</p>
+        <p>Domingo · 12:00–16:00</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="tel:+542226555100">+54 2226 55-5100</a>
+        <a href="mailto:hola@laestancia.com.ar">hola@laestancia.com.ar</a>
+      </div>
+      <div>
+        <h4>Atajos</h4>
+        <a href="#plato">La estación</a><a href="#autor">Platos</a><a href="#casino">Casino</a><a href="#reserva">Reservas</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 La Estancia S.R.L. · Cañuelas, Buenos Aires · Todos los derechos reservados · +18 Jugá con moderación</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+    t.classList.add('on');
+    document.getElementById(t.dataset.p).classList.add('on');
+  });
+});
+document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
